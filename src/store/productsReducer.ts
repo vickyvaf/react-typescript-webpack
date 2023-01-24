@@ -1,8 +1,8 @@
 type State = {
   tag: string;
   searchInputValue: string;
-  products: any;
-  errorMsg: "";
+  products: {}[];
+  errorMsg: string;
 };
 
 type Action = {
@@ -37,7 +37,7 @@ export default function productsReducer(state: State, action: Action) {
           return {
             ...state,
             tag: "loaded",
-            products: action.payload,
+            products: action.payload as [],
             errorMsg: "",
             searchInputValue: "",
           };

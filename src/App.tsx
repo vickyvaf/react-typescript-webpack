@@ -32,6 +32,8 @@ const App: FC = () => {
         if (res.total === 0) {
           dispatch({ type: "FETCH_EMPTY" });
         } else {
+          console.log(typeof res.products);
+          
           dispatch({ type: "FETCH_SUCCESS", payload: res.products });
         }
       })
